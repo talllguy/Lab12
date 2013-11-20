@@ -15,12 +15,13 @@ using namespace std;
 int main ()
 {
 	int arraySize = 0;
+	const int maxArraySize = 10;
 	
 	cout << "This program does a number of calculations on an array.\n"
 	     << "Enter the size of the array up to 10.";
-	while (cin >> arraySize <= 0 || arraySize > 10)
+	while (!cin >> arraySize || arraySize < 1 || arraySize > maxArraySize) // validate
 	{
 		cin.clear();     // Clear the error flags 
-                cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
-                cout << "\aEnter a positive integer, greater than 10: ";   // Re-issue the prompt 
+		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
+		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
