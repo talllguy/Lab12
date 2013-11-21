@@ -16,23 +16,39 @@ using namespace std;
 
 int main()
 {
-	struct node
-	{
-		int data;
-		node *next;
-	};
-	node *q = new node;
-	node *head;
-	head = q;
-	q->data = 10;    // assume the list contains 10 numbers
+	char runQuestion = 'Y';
+	int arraySize = 0;
 
-	for (int i = 0; i < 10; i++)
+	cout << "Do you want to start(Y/N): ";
+	cin >> runQuestion;
+
+	while (runQuestion == 'Y' || runQuestion == 'y')
 	{
-		node *p = new node;
-		cin >> p->data;
-		q->next = p;
-		q = p;
+		cout << "Enter array size: ";
+		while (cin >> arraySize || arraySize > 0 || arraySize <= 10) // error check
+		{
+
+		}
+		struct node
+		{
+			int data;
+			node *next;
+		};
+		node *q = new node;
+		node *head;
+		head = q;
+		q->data = 10;    // assume the list contains 10 numbers
+
+		for (int i = 0; i < 10; i++)
+		{
+			node *p = new node;
+			cin >> p->data;
+			q->next = p;
+			q = p;
+		}
 	}
+
+	
 
 	return 0;
 }
