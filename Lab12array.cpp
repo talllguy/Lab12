@@ -27,7 +27,9 @@ int main()
 		cout << "Enter array size: ";
 		while (cin >> arraySize || arraySize > 0 || arraySize <= 10) // error check
 		{
-
+			cin.clear();     // Clear the error flags 
+			cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
+			cout << "\aEnter a positive integer, less than or equal to 10";   // Re-issue the prompt 
 		}
 		struct node
 		{
@@ -37,9 +39,9 @@ int main()
 		node *q = new node;
 		node *head;
 		head = q;
-		q->data = 10;    // assume the list contains 10 numbers
+		q->data = arraySize;    // assume the list contains 10 numbers
 
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < arraySize; i++)
 		{
 			node *p = new node;
 			cin >> p->data;
