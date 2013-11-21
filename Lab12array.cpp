@@ -12,16 +12,27 @@ Algorithm: Get array size from user, validate, get values,
 #include <iostream>
 using namespace std;
 
-int main ()
+
+
+int main()
 {
-	int arraySize = 0;
-	const int maxArraySize = 10;
-	
-	cout << "This program does a number of calculations on an array.\n"
-	     << "Enter the size of the array up to 10.";
-	while (!cin >> arraySize || arraySize < 1 || arraySize > maxArraySize) // validate
+	struct node
 	{
-		cin.clear();     // Clear the error flags 
-		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
-		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
+		int data;
+		node *next;
+	};
+	node *q = new node;
+	node *head;
+	head = q;
+	q->data = 10;    // assume the list contains 10 numbers
+
+	for (int i = 0; i < 10; i++)
+	{
+		node *p = new node;
+		cin >> p->data;
+		q->next = p;
+		q = p;
 	}
+
+	return 0;
+}
