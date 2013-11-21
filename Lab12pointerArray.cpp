@@ -26,6 +26,7 @@ int main()
 
 	while (runQuestion == 'Y' || runQuestion == 'y')
 	{
+		// size of array
 		cout << "Enter array size: ";
 		while (!(cin >> arraySize) || arraySize < 0 || arraySize > maxArraySize) // error check
 		{
@@ -33,6 +34,8 @@ int main()
 			cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 			cout << "\aInvalid entry. Enter a positive integer, less than 11.";   // Re-issue the prompt 
 		}
+
+		// declare array with pointers
 		struct node
 		{
 			double data;
@@ -42,7 +45,8 @@ int main()
 		node *head;
 		head = q;
 		q->data = arraySize;    // assume the list contains 10 numbers
-
+		
+		// fill array
 		for (int i = 0; i < arraySize; i++)
 		{
 			node *p = new node;
@@ -52,10 +56,21 @@ int main()
 				cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 				cout << "\aInvalid entry. Enter a number: ";   // Re-issue the prompt 
 			}
-			
 			q->next = p;
-			q = p;
+			q = p;		
+
 		}
+
+		// print
+		cout << "The array elements are: ";
+		
+		while (p != NULL)
+		{
+			cout << q->data;
+			p = q->next;
+			p = q;
+		}
+
 
 		cout << "Do you want to continue(Y/N): ";
 		cin >> runQuestion;
