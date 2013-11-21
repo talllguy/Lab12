@@ -18,6 +18,7 @@ int main()
 {
 	char runQuestion = 'Y';
 	int arraySize = 0;
+	const int maxArraySize = 10;
 
 	cout << "Do you want to start(Y/N): ";
 	cin >> runQuestion;
@@ -25,15 +26,15 @@ int main()
 	while (runQuestion == 'Y' || runQuestion == 'y')
 	{
 		cout << "Enter array size: ";
-		while (cin >> arraySize || arraySize > 0 || arraySize <= 10) // error check
+		while (!(cin >> arraySize) || arraySize < 0 || arraySize > maxArraySize) // error check
 		{
 			cin.clear();     // Clear the error flags 
 			cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
-			cout << "\aEnter a positive integer, less than or equal to 10";   // Re-issue the prompt 
+			cout << "\aInvalid entry. Enter a positive integer, less than 11.";   // Re-issue the prompt 
 		}
 		struct node
 		{
-			int data;
+			double data;
 			node *next;
 		};
 		node *q = new node;
@@ -44,10 +45,19 @@ int main()
 		for (int i = 0; i < arraySize; i++)
 		{
 			node *p = new node;
-			cin >> p->data;
+			while (!(cin >> p->data)) // error check
+			{
+				cin.clear();     // Clear the error flags 
+				cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
+				cout << "\aInvalid entry. Enter a number: ";   // Re-issue the prompt 
+			}
+			
 			q->next = p;
 			q = p;
 		}
+
+		cout << "Do you want to continue(Y/N): ";
+		cin >> runQuestion;
 	}
 
 	
