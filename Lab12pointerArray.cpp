@@ -9,6 +9,7 @@ Problem: Create a 1-dimensional array with n elements; get
 Algorithm: Get array size from user, validate, get values,
 	perform functions.
 ************************************************************/
+/* This is broken
 #include <iostream>
 using namespace std;
 
@@ -64,3 +65,4 @@ int main()
 
 	return 0;
 }
+*/
