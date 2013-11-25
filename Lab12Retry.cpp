@@ -37,8 +37,6 @@ int main()
 		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
-	// test:
-	cout << arraySize;
 
 	float *numbers;
 	numbers = new float[arraySize]; // declare numbers array with 'elements' (n) positions
