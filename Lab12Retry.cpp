@@ -26,18 +26,19 @@ int main()
 	//https://github.com/talllguy/Lab12/blob/c864814b032eff90c493701556f869aff79629d4/Lab12array.cpp
 
 	int arraySize = 0; // size of the array
-	
 	const int maxArraySize = 10; // max size of the array
 	float averageNum(0), evenSumNum(0), oddSumNum(0); // variables that returns will be stored in
         
 	cout << "This program does a number of calculations on an array.\n"
-		<< "Enter the size of the array up to 10.";
-	while (!cin >> arraySize || arraySize < 1 || arraySize > maxArraySize) // validate
+		<< "Enter the size of the array up to 10.\n";
+	while (!(cin >> arraySize) || arraySize < 1 || arraySize > maxArraySize) // validate
 	{
 		cin.clear();     // Clear the error flags 
 		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
+	// test:
+	cout << arraySize;
 
 	float *numbers;
 	numbers = new float[arraySize]; // declare numbers array with 'elements' (n) positions
