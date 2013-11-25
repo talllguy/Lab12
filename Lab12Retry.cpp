@@ -12,7 +12,12 @@ Algorithm: Get array size from user, validate, get values,
 #include <iostream>
 using namespace std;
 
-
+// various array handling functions
+float average(float numbers[]);
+void even(float numbers[]);
+void odd(float numbers[]);
+float evenSum(float numbers[]);
+float oddSum(float numbers[]);
 
 int main()
 {
@@ -20,8 +25,11 @@ int main()
 	// copy back in commit c864814b032eff90c493701556f869aff79629d4
 	//https://github.com/talllguy/Lab12/blob/c864814b032eff90c493701556f869aff79629d4/Lab12array.cpp
 
-	int arraySize = 0;
-	const int maxArraySize = 10;
+	int arraySize = 0; // size of the array
+	const int finalArraySize = 0; // final size of the array after verify
+	const int maxArraySize = 10; // max size of the array
+	float averageNum(0), evenSumNum(0), oddSumNum(0); // variables that returns will be stored in
+	float numbers[10]; // declare numbers array with 'elements' (n) positions
         
 	cout << "This program does a number of calculations on an array.\n"
 		<< "Enter the size of the array up to 10.";
@@ -31,53 +39,28 @@ int main()
 		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
-
-
-	//char runQuestion = 'Y';
-	//int arraySize = 0;
-	//const int maxArraySize = 10;
-
-	//cout << "Do you want to start(Y/N): ";
-	//cin >> runQuestion;
-
-	//while (runQuestion == 'Y' || runQuestion == 'y')
-	//{
-	//	cout << "Enter array size: ";
-	//	while (!(cin >> arraySize) || arraySize < 0 || arraySize > maxArraySize) // error check
-	//	{
-	//		cin.clear();     // Clear the error flags 
-	//		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
-	//		cout << "\aInvalid entry. Enter a positive integer, less than 11.";   // Re-issue the prompt 
-	//	}
-	//	struct node
-	//	{
-	//		double data;
-	//		node *next;
-	//	};
-	//	node *q = new node;
-	//	node *head;
-	//	head = q;
-	//	q->data = arraySize;    // assume the list contains 10 numbers
-
-	//	for (int i = 0; i < arraySize; i++)
-	//	{
-	//		node *p = new node;
-	//		while (!(cin >> p->data)) // error check
-	//		{
-	//			cin.clear();     // Clear the error flags 
-	//			cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
-	//			cout << "\aInvalid entry. Enter a number: ";   // Re-issue the prompt 
-	//		}
-	//		
-	//		q->next = p;
-	//		q = p;
-	//	}
-
-	//	cout << "Do you want to continue(Y/N): ";
-	//	cin >> runQuestion;
-	//}
-
 	
+
+	float numbers[arraySize]; // declare numbers array with 'elements' (n) positions
+	
+	for (int i = 0; i < 10; i++) // loop to fill array
+	{
+		cout << "Position " << (i + 1) << ": "; // display the iterator + 1 since it begins as 0
+		while ((!(cin >> numbers[i]))) //detects errors in input
+		{
+			cin.clear();     // Clear the error flags
+			cin.ignore(100, '\n');    // Remove unwanted characters from buffer
+			cout << "\aInput Error. Please enter a number only.\n" // if error, sound the alarm
+				<< "Position " << (i + 1) << ": ";
+		}
+	}
+
+	cout << "\nExcellent. Your inputs are:\n";
+	cout << "| "; // first separator for clarity
+	for (int i = 0; i < 10; i++) // test loop to output variables in positions
+	{
+		cout << numbers[i] << " | "; // put formatted separator in
+	}
 
 	return 0;
 }
