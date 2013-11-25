@@ -26,10 +26,9 @@ int main()
 	//https://github.com/talllguy/Lab12/blob/c864814b032eff90c493701556f869aff79629d4/Lab12array.cpp
 
 	int arraySize = 0; // size of the array
-	const int finalArraySize = 0; // final size of the array after verify
+	
 	const int maxArraySize = 10; // max size of the array
 	float averageNum(0), evenSumNum(0), oddSumNum(0); // variables that returns will be stored in
-	float numbers[10]; // declare numbers array with 'elements' (n) positions
         
 	cout << "This program does a number of calculations on an array.\n"
 		<< "Enter the size of the array up to 10.";
@@ -39,11 +38,11 @@ int main()
 		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
-	
 
-	float numbers[arraySize]; // declare numbers array with 'elements' (n) positions
+	float *numbers;
+	numbers = new float[arraySize]; // declare numbers array with 'elements' (n) positions
 	
-	for (int i = 0; i < 10; i++) // loop to fill array
+	for (int i = 0; i < arraySize; i++) // loop to fill array
 	{
 		cout << "Position " << (i + 1) << ": "; // display the iterator + 1 since it begins as 0
 		while ((!(cin >> numbers[i]))) //detects errors in input
@@ -57,7 +56,7 @@ int main()
 
 	cout << "\nExcellent. Your inputs are:\n";
 	cout << "| "; // first separator for clarity
-	for (int i = 0; i < 10; i++) // test loop to output variables in positions
+	for (int i = 0; i < arraySize; i++) // test loop to output variables in positions
 	{
 		cout << numbers[i] << " | "; // put formatted separator in
 	}
