@@ -92,12 +92,17 @@ int main()
 
 	// even sum
 
-	cout << "\nThe sum of the elements with even subscripts = " << evenSum(numbers, arraySize) << endl;
+	cout << "The sum of the elements with even subscripts = " << evenSum(numbers, arraySize) << endl;
 
 
 	// odd subscripts
 
 	odd(numbers, arraySize);
+
+
+	// odd sum
+
+	cout << "The sum of the elements with odd subscripts = " << oddSum(numbers, arraySize) << endl;
 
 	return 0;
 }
@@ -118,7 +123,8 @@ void even(float numbers[], int arraySize) // display even values
 	int temp = 0;
 
 	// format output
-	cout << "Index   Value\n"
+	cout << "The elements with even subscripts are:\n"
+		 << "Index   Value\n"
 		 << "=============\n";
 	
 	// even check subs
@@ -134,7 +140,8 @@ void odd(float numbers[], int arraySize) // display odd values
 	int temp = 0;
 
 	// format output
-	cout << "Index   Value\n"
+	cout << "The elements with odd subscripts are:\n"
+		<< "Index   Value\n"
 		<< "=============\n";
 
 	// even check subs
@@ -154,13 +161,20 @@ float evenSum(float numbers[], int arraySize) // return even sums
 		temp = (int)numbers[i] % 2; // find mod array index div by 2
 		if (temp == 0)
 			sum += numbers[i]; // if mod is zero (even) add to sum)
-		sum += numbers[i];
 	}
 
 	return sum;
-
 }
 float oddSum(float numbers[], int arraySize) // return odd sums
 {
-	return 0;
+	int temp = 0;
+	float sum(0), average(0); // define variables
+	for (int i = 0; i < arraySize; i++)
+	{
+		temp = (int)numbers[i] % 2; // find mod array index div by 2
+		if (temp != 0)
+			sum += numbers[i]; // if mod is not zero (odd) add to sum)
+	}
+
+	return sum;
 }
