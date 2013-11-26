@@ -92,7 +92,12 @@ int main()
 
 	// even sum
 
+	cout << "\nThe sum of the elements with even subscripts = " << evenSum(numbers, arraySize) << endl;
 
+
+	// odd subscripts
+
+	odd(numbers, arraySize);
 
 	return 0;
 }
@@ -108,9 +113,9 @@ float average(float numbers[], int arraySize)
 	return average;
 }
 
-void even(float numbers[], int arraySize)
+void even(float numbers[], int arraySize) // display even values
 {
-	int temp = 0, count = 0;
+	int temp = 0;
 
 	// format output
 	cout << "Index   Value\n"
@@ -121,12 +126,12 @@ void even(float numbers[], int arraySize)
 	{
 		temp = (int)numbers[i] % 2; // if integer version of value in numbers array is even..
 		if (temp == 0)
-			cout << setw(5) << i << setw(8) << numbers[i] << endl; // output the value
+			cout << setw(5) << (i+1) << setw(8) << numbers[i] << endl; // output the value
 	}
 }
-void odd(float numbers[], int arraySize)
+void odd(float numbers[], int arraySize) // display odd values
 {
-	int temp = 0, count = 0;
+	int temp = 0;
 
 	// format output
 	cout << "Index   Value\n"
@@ -135,16 +140,27 @@ void odd(float numbers[], int arraySize)
 	// even check subs
 	for (int i = 0; i < arraySize; i++)
 	{
-		temp = (int)numbers[i] % 2; // if integer version of value in numbers array is even..
+		temp = (int)numbers[i] % 2; // if integer version of value in numbers array is odd..
 		if (temp != 0)
-			cout << setw(5) << i << setw(8) << numbers[i] << endl; // output the value
+			cout << setw(5) << (i+1) << setw(8) << numbers[i] << endl; // output the value
 	}
 }
-float evenSum(float numbers[], int arraySize)
+float evenSum(float numbers[], int arraySize) // return even sums
 {
-	return 0;
+	int temp = 0;
+	float sum(0), average(0); // define variables
+	for (int i = 0; i < arraySize; i++)
+	{
+		temp = (int)numbers[i] & 2; // find mod array index div by 2
+		if (temp == 0)
+			sum += numbers[i]; // if mod is zero (even) add to sum)
+		sum += numbers[i];
+	}
+
+	return sum;
+
 }
-float oddSum(float numbers[], int arraySize)
+float oddSum(float numbers[], int arraySize) // return odd sums
 {
 	return 0;
 }
