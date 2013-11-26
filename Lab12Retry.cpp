@@ -22,83 +22,100 @@ float oddSum(float numbers[], int arraySize);
 
 int main()
 {
-	// variables
+	// intro
 
-	int arraySize = 0; // size of the array
-	const int maxArraySize = 10; // max size of the array
-	float averageNum(0), evenSumNum(0), oddSumNum(0); // variables that returns will be stored in
-
-
-	// array size determination
-        
-	cout << "This program does a number of calculations on an array.\n"
-		<< "Enter the size of the array up to 10.\n";
-	while (!(cin >> arraySize) || arraySize < 1 || arraySize > maxArraySize) // validate
-	{
-		cin.clear();     // Clear the error flags 
-		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
-		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
-	}
-	cout << "\nNow enter the " << arraySize << " values.\n";
-
-
-	// set up array
-
-	float *numbers;
-	numbers = new float[arraySize]; // declare numbers array with 'elements' (n) positions
+	cout << "This program does a variety of calculations on an array.\n";
 	
+	// do loop around entire program
 
-	// loop to fill array
-
-	for (int i = 0; i < arraySize; i++)
+	char continueQuestion = 'Y'; // check if user wants to run or repeat
+	cout << "Do you want to start? (Y/N): ";
+	cin >> continueQuestion;
+	while (continueQuestion == 'Y' || continueQuestion == 'y')
 	{
-		cout << (i + 1) << ": "; // display the iterator + 1 since it begins as 0
-		while ((!(cin >> numbers[i]))) //detects errors in input
+		// variables
+
+		int arraySize = 0; // size of the array
+		const int maxArraySize = 10; // max size of the array
+		float averageNum(0), evenSumNum(0), oddSumNum(0); // variables that returns will be stored in
+
+
+		// array size determination
+
+		cout << "\nEnter the size of the array up to 10.\n";
+		while (!(cin >> arraySize) || arraySize < 1 || arraySize > maxArraySize) // validate
 		{
-			cin.clear();     // Clear the error flags
-			cin.ignore(100, '\n');    // Remove unwanted characters from buffer
-			cout << "\aInput Error. Please enter a number only.\n"; // if error, sound the alarm
-			cout << (i + 1) << ": ";
+			cin.clear();     // Clear the error flags 
+			cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
+			cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 		}
+		cout << "\nNow enter the " << arraySize << " values.\n";
+
+
+		// set up array
+
+		float *numbers;
+		numbers = new float[arraySize]; // declare numbers array with 'elements' (n) positions
+
+
+		// loop to fill array
+
+		for (int i = 0; i < arraySize; i++)
+		{
+			cout << (i + 1) << ": "; // display the iterator + 1 since it begins as 0
+			while ((!(cin >> numbers[i]))) //detects errors in input
+			{
+				cin.clear();     // Clear the error flags
+				cin.ignore(100, '\n');    // Remove unwanted characters from buffer
+				cout << "\aInput Error. Please enter a number only.\n"; // if error, sound the alarm
+				cout << (i + 1) << ": ";
+			}
+		}
+
+
+		// display array
+
+		cout << "\nThe array elements are:\n";
+		cout << "   "; // indent separator for clarity
+		for (int i = 0; i < arraySize; i++) // test loop to output variables in positions
+		{
+			cout << numbers[i] << "   "; // space separated
+		}
+
+		cout << endl; // break in output
+
+
+		// output average
+
+		averageNum = average(numbers, arraySize);
+		cout << "\nThe average value =    " << averageNum << endl;
+
+
+		// even subscripts
+
+		even(numbers, arraySize);
+
+
+		// even sum
+
+		cout << "\nThe sum of the elements with even subscripts = " << evenSum(numbers, arraySize) << endl;
+
+
+		// odd subscripts
+
+		odd(numbers, arraySize);
+
+
+		// odd sum
+
+		cout << "\nThe sum of the elements with odd subscripts = " << oddSum(numbers, arraySize) << endl;
+
+
+		// repeat?
+
+		cout << "\nDo you want to continue? (Y/N):";
+		cin >> continueQuestion;
 	}
-
-	
-	// display array
-
-	cout << "\nThe array elements are:\n";
-	cout << "   "; // indent separator for clarity
-	for (int i = 0; i < arraySize; i++) // test loop to output variables in positions
-	{
-		cout << numbers[i] << "   "; // space separated
-	}
-
-	cout << endl; // break in output
-
-
-	// output average
-
-	averageNum = average(numbers, arraySize);
-	cout << "\nThe average value =    " << averageNum << endl;
-
-
-	// even subscripts
-	
-	even(numbers, arraySize);
-
-
-	// even sum
-
-	cout << "\nThe sum of the elements with even subscripts = " << evenSum(numbers, arraySize) << endl;
-
-
-	// odd subscripts
-
-	odd(numbers, arraySize);
-
-
-	// odd sum
-
-	cout << "\nThe sum of the elements with odd subscripts = " << oddSum(numbers, arraySize) << endl;
 
 	return 0;
 }
