@@ -151,7 +151,7 @@ float evenSum(float numbers[], int arraySize) // return even sums
 	float sum(0), average(0); // define variables
 	for (int i = 0; i < arraySize; i++)
 	{
-		temp = (int)numbers[i] & 2; // find mod array index div by 2
+		temp = (int)numbers[i] % 2; // find mod array index div by 2
 		if (temp == 0)
 			sum += numbers[i]; // if mod is zero (even) add to sum)
 		sum += numbers[i];
