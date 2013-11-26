@@ -25,9 +25,14 @@ int main()
 	// copy back in commit c864814b032eff90c493701556f869aff79629d4
 	//https://github.com/talllguy/Lab12/blob/c864814b032eff90c493701556f869aff79629d4/Lab12array.cpp
 
+	// variables
+
 	int arraySize = 0; // size of the array
 	const int maxArraySize = 10; // max size of the array
 	float averageNum(0), evenSumNum(0), oddSumNum(0); // variables that returns will be stored in
+
+
+	// array size determination
         
 	cout << "This program does a number of calculations on an array.\n"
 		<< "Enter the size of the array up to 10.\n";
@@ -37,13 +42,20 @@ int main()
 		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
+	cout << "Now enter the " << arraySize << " values.";
+
+
+	// set up array
 
 	float *numbers;
 	numbers = new float[arraySize]; // declare numbers array with 'elements' (n) positions
 	
-	for (int i = 0; i < arraySize; i++) // loop to fill array
+
+	// loop to fill array
+
+	for (int i = 0; i < arraySize; i++)
 	{
-		cout << "Position " << (i + 1) << ": "; // display the iterator + 1 since it begins as 0
+		cout << (i + 1) << ": "; // display the iterator + 1 since it begins as 0
 		while ((!(cin >> numbers[i]))) //detects errors in input
 		{
 			cin.clear();     // Clear the error flags
@@ -53,11 +65,14 @@ int main()
 		}
 	}
 
-	cout << "\nExcellent. Your inputs are:\n";
-	cout << "| "; // first separator for clarity
+	
+	// display array
+
+	cout << "The array elements are:\n";
+	cout << "   "; // indent separator for clarity
 	for (int i = 0; i < arraySize; i++) // test loop to output variables in positions
 	{
-		cout << numbers[i] << " | "; // put formatted separator in
+		cout << numbers[i] << "   "; // space separated
 	}
 
 	return 0;
