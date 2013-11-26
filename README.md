@@ -10,3 +10,10 @@ Create a 1-dimensional array with n elements; get the size of the array as user 
 
 ## Algorithm
 Get array size from user, validate, get values, perform functions.
+
+## Output examples
+Here is how the successful execution of the program looks:
+![successful](/output/successful-output.png)
+
+Here is how the various validation checks look:
+![validate](/output/error-checks.png)
