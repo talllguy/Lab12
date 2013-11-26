@@ -22,10 +22,6 @@ float oddSum(float numbers[], int arraySize);
 
 int main()
 {
-	// redo with arrays
-	// copy back in commit c864814b032eff90c493701556f869aff79629d4
-	//https://github.com/talllguy/Lab12/blob/c864814b032eff90c493701556f869aff79629d4/Lab12array.cpp
-
 	// variables
 
 	int arraySize = 0; // size of the array
@@ -43,7 +39,7 @@ int main()
 		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
-	cout << "Now enter the " << arraySize << " values.\n";
+	cout << "\nNow enter the " << arraySize << " values.\n";
 
 
 	// set up array
@@ -82,7 +78,7 @@ int main()
 	// output average
 
 	averageNum = average(numbers, arraySize);
-	cout << "The average value =    " << averageNum << endl;
+	cout << "\nThe average value =    " << averageNum << endl;
 
 
 	// even subscripts
@@ -92,7 +88,7 @@ int main()
 
 	// even sum
 
-	cout << "The sum of the elements with even subscripts = " << evenSum(numbers, arraySize) << endl;
+	cout << "\nThe sum of the elements with even subscripts = " << evenSum(numbers, arraySize) << endl;
 
 
 	// odd subscripts
@@ -102,7 +98,7 @@ int main()
 
 	// odd sum
 
-	cout << "The sum of the elements with odd subscripts = " << oddSum(numbers, arraySize) << endl;
+	cout << "\nThe sum of the elements with odd subscripts = " << oddSum(numbers, arraySize) << endl;
 
 	return 0;
 }
@@ -123,7 +119,7 @@ void even(float numbers[], int arraySize) // display even values
 	int temp = 0;
 
 	// format output
-	cout << "The elements with even subscripts are:\n"
+	cout << "\nThe elements with even subscripts are:\n"
 		 << "Index   Value\n"
 		 << "=============\n";
 	
@@ -140,7 +136,7 @@ void odd(float numbers[], int arraySize) // display odd values
 	int temp = 0;
 
 	// format output
-	cout << "The elements with odd subscripts are:\n"
+	cout << "\nThe elements with odd subscripts are:\n"
 		<< "Index   Value\n"
 		<< "=============\n";
 
