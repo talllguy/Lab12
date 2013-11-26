@@ -89,6 +89,11 @@ int main()
 	
 	even(numbers, arraySize);
 
+
+	// even sum
+
+
+
 	return 0;
 }
 
@@ -116,14 +121,25 @@ void even(float numbers[], int arraySize)
 	{
 		temp = (int)numbers[i] % 2; // if integer version of value in numbers array is even..
 		if (temp == 0)
-			cout << setw(5) << i << setw(4) << numbers[i] << endl; // output the value
+			cout << setw(5) << i << setw(8) << numbers[i] << endl; // output the value
 	}
-
-
-
 }
 void odd(float numbers[], int arraySize)
-{}
+{
+	int temp = 0, count = 0;
+
+	// format output
+	cout << "Index   Value\n"
+		<< "=============\n";
+
+	// even check subs
+	for (int i = 0; i < arraySize; i++)
+	{
+		temp = (int)numbers[i] % 2; // if integer version of value in numbers array is even..
+		if (temp != 0)
+			cout << setw(5) << i << setw(8) << numbers[i] << endl; // output the value
+	}
+}
 float evenSum(float numbers[], int arraySize)
 {
 	return 0;
