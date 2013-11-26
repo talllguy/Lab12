@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab12array.cpp">
+    <ClCompile Include="Lab12Retry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

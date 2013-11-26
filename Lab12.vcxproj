@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab12pointerArray.cpp" />
     <ClCompile Include="Lab12Retry.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
