@@ -13,7 +13,7 @@ Algorithm: Get array size from user, validate, get values,
 using namespace std;
 
 // various array handling functions
-float average(float numbers[]);
+float average(float numbers[], int arraySize);
 void even(float numbers[]);
 void odd(float numbers[]);
 float evenSum(float numbers[]);
@@ -75,5 +75,24 @@ int main()
 		cout << numbers[i] << "   "; // space separated
 	}
 
+	cout << endl; // break in output
+
+
+	// output average
+
+	averageNum = average(numbers, arraySize);
+	cout << "The average value =    " << averageNum;
+
 	return 0;
+}
+
+float average(float numbers[], int arraySize)
+{
+	float sum(0), average(0); // define variables
+	for (int i = 0; i < arraySize; i++)
+	{
+		sum += numbers[i];
+	}
+	average = (sum / arraySize);
+	return average;
 }
