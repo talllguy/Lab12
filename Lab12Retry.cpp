@@ -42,7 +42,7 @@ int main()
 		cin.ignore(100, '\n');    // Remove unwanted characters from buffer 
 		cout << "\aEnter a positive integer, less than 10: ";   // Re-issue the prompt 
 	}
-	cout << "Now enter the " << arraySize << " values.";
+	cout << "Now enter the " << arraySize << " values.\n";
 
 
 	// set up array
@@ -60,15 +60,15 @@ int main()
 		{
 			cin.clear();     // Clear the error flags
 			cin.ignore(100, '\n');    // Remove unwanted characters from buffer
-			cout << "\aInput Error. Please enter a number only.\n" // if error, sound the alarm
-				<< "Position " << (i + 1) << ": ";
+			cout << "\aInput Error. Please enter a number only.\n"; // if error, sound the alarm
+			cout << (i + 1) << ": ";
 		}
 	}
 
 	
 	// display array
 
-	cout << "The array elements are:\n";
+	cout << "\nThe array elements are:\n";
 	cout << "   "; // indent separator for clarity
 	for (int i = 0; i < arraySize; i++) // test loop to output variables in positions
 	{
