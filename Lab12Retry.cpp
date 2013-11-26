@@ -10,14 +10,15 @@ Algorithm: Get array size from user, validate, get values,
 	perform functions.
 ************************************************************/
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 // various array handling functions
 float average(float numbers[], int arraySize);
-void even(float numbers[]);
-void odd(float numbers[]);
-float evenSum(float numbers[]);
-float oddSum(float numbers[]);
+void even(float numbers[], int arraySize);
+void odd(float numbers[], int arraySize);
+float evenSum(float numbers[], int arraySize);
+float oddSum(float numbers[], int arraySize);
 
 int main()
 {
@@ -81,7 +82,12 @@ int main()
 	// output average
 
 	averageNum = average(numbers, arraySize);
-	cout << "The average value =    " << averageNum;
+	cout << "The average value =    " << averageNum << endl;
+
+
+	// even subscripts
+	
+	even(numbers, arraySize);
 
 	return 0;
 }
@@ -95,4 +101,34 @@ float average(float numbers[], int arraySize)
 	}
 	average = (sum / arraySize);
 	return average;
+}
+
+void even(float numbers[], int arraySize)
+{
+	int temp = 0, count = 0;
+
+	// format output
+	cout << "Index   Value\n"
+		 << "=============\n";
+	
+	// even check subs
+	for (int i = 0; i < arraySize; i++)
+	{
+		temp = (int)numbers[i] % 2; // if integer version of value in numbers array is even..
+		if (temp == 0)
+			cout << setw(5) << i << setw(4) << numbers[i] << endl; // output the value
+	}
+
+
+
+}
+void odd(float numbers[], int arraySize)
+{}
+float evenSum(float numbers[], int arraySize)
+{
+	return 0;
+}
+float oddSum(float numbers[], int arraySize)
+{
+	return 0;
 }
