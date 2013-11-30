@@ -37,7 +37,7 @@ int main()
 
 		int arraySize = 0; // size of the array
 		const int maxArraySize = 10; // max size of the array
-		float averageNum(0), evenSumNum(0), oddSumNum(0); // variables that returns will be stored in
+		float averageNum(0); // variables that returns will be stored in
 
 
 		// array size determination
@@ -168,7 +168,7 @@ void odd(float numbers[], int arraySize) // display odd values
 float evenSum(float numbers[], int arraySize) // return even sums
 {
 	int temp = 0;
-	float sum(0), average(0); // define variables
+	float sum(0); // define variables
 	for (int i = 0; i < arraySize; i++)
 	{
 		temp = (int)numbers[i] % 2; // find mod array index div by 2
@@ -181,7 +181,7 @@ float evenSum(float numbers[], int arraySize) // return even sums
 float oddSum(float numbers[], int arraySize) // return odd sums
 {
 	int temp = 0;
-	float sum(0), average(0); // define variables
+	float sum(0); // define variables
 	for (int i = 0; i < arraySize; i++)
 	{
 		temp = (int)numbers[i] % 2; // find mod array index div by 2
