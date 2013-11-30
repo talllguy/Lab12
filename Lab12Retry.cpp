@@ -24,7 +24,7 @@ int main()
 {
 	// intro
 
-	cout << "This program does a variety of calculations on an array.\n";
+    cout << "This program does a variety of calculations on an array.\n";
 	
 	// do loop around entire program
 
