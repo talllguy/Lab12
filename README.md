@@ -1,6 +1,8 @@
 Lab12
 =====
 
+[![Build Status](https://travis-ci.org/talllguy/Lab12.png?branch=master)](https://travis-ci.org/talllguy/Lab12)
+
 - Elliott Plack
 - 19 NOV 2013
 - COSC 501 @ Towson University
